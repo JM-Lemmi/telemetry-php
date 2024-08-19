@@ -1,0 +1,13 @@
+RewriteEngine On
+RewriteRule ^(.+)$ $1.php [L]
+
+<Files "data.csv">
+    Require all denied
+</Files>
+
+# htaccess protection
+<Files ~ "^.*\.([Hh][Tt][Aa])">
+    order allow,deny
+    deny from all
+    satisfy all
+</Files>
